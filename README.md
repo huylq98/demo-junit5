@@ -47,30 +47,29 @@ Junit 5 allow select test classes in some packages or specify classes.
 ### 9. Assumptions  
 **Example**: _AssumptionDemoTest.java_
 ## II. Code Coverage  
-- Use Jacoco plugin. Include dependency in pom file
-  
+- Use Jacoco plugin. Include dependency in pom file:  
     
-    <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-            <version>0.8.2</version>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>prepare-agent</goal>
-                </goals>
-              </execution>
-              <!-- attached to Maven test phase -->
-              <execution>
-                <id>report</id>
-                <phase>test</phase>
-                <goals>
-                  <goal>report</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          
+        <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.2</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>prepare-agent</goal>
+                    </goals>
+                  </execution>
+                  <!-- attached to Maven test phase -->
+                  <execution>
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                      <goal>report</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+     
 - after load dependency try to run below command  
       
         mvn clean test   
