@@ -75,8 +75,42 @@ Junit 5 allow select test classes in some packages or specify classes.
         mvn clean test   
     
 The report only generate at _target/site/jacoco/*_  if all test case was passed  
+## III. Mockito
+### 1. Config dependencies for Mockito
+- `mockito-inline` is Java 16 ready version of mockito-core. It also supports mocking of static methods and final classes
+- `mockito-junit-jupiter` for MockitoExtension
+  
+      <dependency>
+        <groupId>org.mockito</groupId>
+          <artifactId>mockito-inline</artifactId>
+          <version>3.9.0</version>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>3.9.0</version>
+          <scope>test</scope>
+      </dependency>
+### 2. Declare and config mock object
+**Example**: _CarServiceMockDemo.java_
+- Difference between mock and spy
 
+**Example**: _MockSpyDemo_.java
+### 3. Stub method
+####3.1 Stub returned value
+####3.2 Stub throw exception
+**Note**: If the throwable class is a checked exception then it has to match one of the checked exceptions of the stubbed method signature.
+####3.3 Stub multiple returned value
+####3.4 Stub void method
+####3.5 ArgumentMatchers
+**Example**: _StubMethodDemo.java_
+### 4. Verify
+- Mockito.times(invocationTimes) vs Mockito.calls(invocationTimes)
 
+**Example**: _VerifyDemo.java_
+### 5. Answer
+**Example**: _AnswerDemo.java_
 ## IV. References  
 https://www.baeldung.com/junit-5  
 https://www.infoworld.com/article/3537563/junit-5-tutorial-part-1-unit-testing-with-junit-5-mockito-and-hamcrest.html?nsdr=true    
@@ -84,3 +118,4 @@ https://howtodoinjava.com/junit-5-tutorial/
 https://www.vogella.com/tutorials/JUnit/article.html#junit5  
 https://examples.javacodegeeks.com/core-java/junit/junit-code-coverage/    
 https://mkyong.com/maven/maven-jacoco-code-coverage-example/
+https://site.mockito.org/javadoc/current/allclasses-noframe.html
