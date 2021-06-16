@@ -98,12 +98,12 @@ The report only generate at _target/site/jacoco/*_  if all test case was passed
 
 **Example**: _MockSpyDemo_.java
 ### 3. Stub method
-####3.1 Stub returned value
-####3.2 Stub throw exception
+#### 3.1 Stub returned value
+#### 3.2 Stub throw exception
 **Note**: If the throwable class is a checked exception then it has to match one of the checked exceptions of the stubbed method signature.
-####3.3 Stub multiple returned value
-####3.4 Stub void method
-####3.5 ArgumentMatchers
+#### 3.3 Stub multiple returned value
+#### 3.4 Stub void method
+#### 3.5 ArgumentMatchers
 **Example**: _StubMethodDemo.java_
 ### 4. Verify
 - Mockito.times(invocationTimes) vs Mockito.calls(invocationTimes)
